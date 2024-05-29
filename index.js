@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 5000;
+const cors=require('cors');
+app.use(cors());
 
 app.use(express.json());//This needs to be above any routes that will use req.body
 
@@ -9,7 +11,7 @@ const Project = require('./Project');
 const Blog = require('./index'); // Import the Blog model
 
 app.get('/', (req, res) => {
-    res.send('Hello, World! I am Dewmin Kasmitha');
+    res.send('Hello, World!');
 });
 
 app.get('/projects', async (req, res) => {
